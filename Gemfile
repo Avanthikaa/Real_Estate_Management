@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.10'
 # Use sqlite3 as the database for Active Record
 
-gem 'pg'
+gem 'pg', '~> 0.20'
 
 #group :production do
 
