@@ -69,7 +69,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Gemfile" value="79" />
+          <entry key="Gemfile" value="81" />
           <entry key="erb" value="448" />
           <entry key="rb" value="1108" />
           <entry key="yml" value="47" />
@@ -78,7 +78,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="RHTML" value="448" />
-          <entry key="Ruby" value="1187" />
+          <entry key="Ruby" value="1189" />
           <entry key="YAML" value="47" />
         </counts>
       </usages-collector>
@@ -116,8 +116,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="105">
+              <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -489,12 +489,12 @@
       <option name="presentableId" value="Default" />
       <updated>1538290166019</updated>
       <workItem from="1538290167387" duration="6105000" />
-      <workItem from="1538305842858" duration="31389000" />
+      <workItem from="1538305842858" duration="31749000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37494000" />
+    <option name="totallyTimeSpent" value="37854000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -745,8 +745,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="105">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
         </state>
       </provider>
     </entry>
