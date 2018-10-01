@@ -1,0 +1,42 @@
+<h1>Create Real Estate Company Information</h1>
+
+<%= form_for :realestate do |f| %>
+  <div>
+    <%= f.label :id %>
+    <%= f.text_field :id, autofocus: true %>
+  </div>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :website %>
+    <%= f.text_field :website %>
+  </div>
+  <div>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+  <div>
+    <%= f.label :size %>
+    <%= f.text_field :size %>
+  </div>
+
+  <div>
+    <%= f.label :founded %>
+    <%= f.text_field :founded %>
+  </div>
+  <div>
+    <%= f.label :revenue %>
+    <%= f.text_field :revenue %>
+  </div>
+  <div>
+    <%= f.label :synopsis %>
+    <%= f.text_field :synopsis %>
+  </div>
+  <div>
+    <%= f.submit "Submit" %>
+  </div>
+
+<% end %>

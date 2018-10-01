@@ -1,0 +1,46 @@
+
+
+<h2>Real Estate Company and its details</h2>
+<p>
+  <strong>Id:</strong>
+  <%= @realestate.id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @realestate.name %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @realestate.website %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @realestate.address %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @realestate.size %>
+</p>
+
+<p>
+  <strong>Found:</strong>
+  <%= @realestate.founded %>
+</p>
+
+<p>
+  <strong>Revenue:</strong>
+  <%= @realestate.revenue %>
+</p>
+
+<p>
+  <strong>Synopsis:</strong>
+  <%= @realestate.synopsis %>
+</p>
+
+<%render root_path%>
+
+<%= link_to 'Back', root_path, :class => 'button' %>
