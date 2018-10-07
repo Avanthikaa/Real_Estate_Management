@@ -1,5 +1,4 @@
 class House < ActiveRecord::Base
-  validates :id, :presence => true
   validates :realestateid, :presence =>true
   validates :location, :presence =>true
   validates :squarefootage, :presence =>true

@@ -1,8 +1,8 @@
 class CreateHouses < ActiveRecord::Migration
+
   def change
-    create_table :houses, :id => false do |t|
-      t.integer :id
-      t.integer :realestateid
+    create_table :houses do |t|
+      t.integer :realestateid, :primary_key
       t.string :location
       t.integer :squarefootage
       t.integer :year
@@ -17,4 +17,6 @@ class CreateHouses < ActiveRecord::Migration
       t.timestamps null: false
     end
   end
+  #self.primary_key = :id
+
 end

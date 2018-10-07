@@ -16,12 +16,26 @@ class HouseController < ApplicationController
       render :new
     end
   end
-  private
+  def edit
+    @house = House.find(params[:id])
+  end
 
+  def update
+    @house = House.find(params[:id])
+    if @house.update_attributes(house_params)
+      # Handle a successful update.
+      flash[:notice] = "Updated successfully!"
+      redirect_to root_path
+    else
+      render 'edit'
+    end
+  end
+
+  private
   def house_params
     # strong parameters - whitelist of allowed fields #=> permit(:name, :email, ...)
     # that can be submitted by a form to the user model #=> require(:user)
-    params.require(:house).permit(:id, :realestateid, :location, :squarefootage, :year, :style, :list_price, :floors, :basement, :currentowner, :contact, :potentialbuyers)
+    params.require(:house).permit(:realestateid, :location, :squarefootage, :year, :style, :list_price, :floors, :basement, :currentowner, :contact, :potentialbuyers)
   end
 
 end

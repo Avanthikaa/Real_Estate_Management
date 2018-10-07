@@ -1,0 +1,15 @@
+<% @house = House.all %>
+<% @house.each do |house| %>
+  <%= house.id %><br/>
+  <%= house.realestateid %><br/>
+  <%= house.location %><br/>
+  <%= house.squarefootage %><br/>
+  <%= house.year %><br/>
+  <%= house.style %><br/>
+  <%= house.list_price %><br/>
+  <%= house.floors %><br/>
+  <%= house.basement %><br/>
+  <%= house.currentowner %><br/>
+  <%= house.contact %><br/>
+  <%= house.potentialbuyers %><br/>
+<% end %>

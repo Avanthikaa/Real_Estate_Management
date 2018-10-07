@@ -79,5 +79,13 @@ Rails.application.routes.draw do
 
   post '/house' => 'house#create'
 
+  get '/house/show' => 'house#show'
+
   get '/realestate/show' => 'realestate#show'
+
+  get '/user/:id/edit' => 'users#edit'
+
+  get '/house/:id/edit' => 'house#edit'
+
+  post '/house/:id/edit' => 'house#update'
 end
