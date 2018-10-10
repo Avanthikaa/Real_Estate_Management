@@ -1,0 +1,10 @@
+<h2> Welcome, User <%= %></h2>
+<br>
+<br>
+
+<h4><%= link_to "Real Estate Companies",house_path %></h4>
+<h4><%= link_to "Houses", house_path%></h4>
+<%# if current_user.usertype != 'Customer' %>
+  <h4><%= link_to "Users", house_path %></h4>
+<%# end %>
+  <h4><%= link_to "Inquiries", house_path %></h4>

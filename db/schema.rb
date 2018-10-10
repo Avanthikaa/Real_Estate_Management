@@ -53,9 +53,8 @@ ActiveRecord::Schema.define(version: 20181010125916) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.boolean  "status"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "user_type"
     t.string   "phone"
     t.string   "preferred_contact"
