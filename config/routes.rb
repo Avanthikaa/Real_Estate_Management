@@ -54,7 +54,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  root to: 'users#menu'
+  root to: 'users#new'
 
   # sign up page with form:
   get 'users/new' => 'users#new', as: :new_user
@@ -89,6 +89,8 @@ Rails.application.routes.draw do
 
   post '/house/:id/edit' => 'house#update'
 
+  get '/user/menu' => 'users#menu'
+
   get '/realestate/:id/edit' => 'realestate#edit'
 
   post '/realestate/:id/edit' => 'realestate#update'
@@ -100,5 +102,4 @@ Rails.application.routes.draw do
   get '/users/:id/destroy' => 'users#destroy'
 
   get '/inquiry/:id/destroy' => 'inquiry#destroy'
-
 end

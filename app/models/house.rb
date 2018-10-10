@@ -1,9 +1,15 @@
 class House < ActiveRecord::Base
-    validates :realestateid, presence: true, numericality: { only_integer: true }
-    validates :location, presence: true
-    validates :squarefootage, presence: true, numericality: true
-    validates :year, presence: true, numericality: { only_integer: true }
-    validates :list_price, presence: true
-    validates :floors, presence: true, numericality: { only_integer: true }
-    validates :contact, presence: true, numericality: { only_integer: true }, length: {is: 10}
- end
+
+  mount_uploader :image, HouseImagesUploader
+  validates :realestateid, :presence =>true
+  validates :location, :presence =>true
+  validates :squarefootage, :presence =>true
+  validates :year, :presence =>true
+  validates :style, :presence =>true
+  validates :list_price, :presence => true
+  validates :floors, :presence => true
+  validates :basement, :presence => true
+  validates :currentowner, :presence => true
+  validates :contact, :presence => true
+  validates :potentialbuyers, :presence => true
+end

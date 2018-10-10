@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181010125916) do
+ActiveRecord::Schema.define(version: 20181010172253) do
 
   create_table "houses", force: :cascade do |t|
     t.integer  "realestateid"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20181010125916) do
     t.string   "potentialbuyers"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "image"
   end
 
   create_table "inquiries", force: :cascade do |t|
@@ -53,8 +54,8 @@ ActiveRecord::Schema.define(version: 20181010125916) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.string   "user_type"
     t.string   "phone"
     t.string   "preferred_contact"
