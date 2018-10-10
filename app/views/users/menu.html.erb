@@ -8,6 +8,6 @@
 <% end %>
 <h4><%= link_to "Houses", house_show_path%></h4>
 <% if current_user.user_type === 'Admin' %>
-  <h4><%= link_to "Users", users_path %></h4>
+  <h4><%= link_to "Users", house_path %></h4>
 <% end %>
   <h4><%= link_to "Inquiries", house_path %></h4>

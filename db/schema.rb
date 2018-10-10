@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20181010172253) do
     t.string   "password_digest"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.boolean  "status"
     t.string   "user_type"
     t.string   "phone"
     t.string   "preferred_contact"
