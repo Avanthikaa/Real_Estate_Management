@@ -54,7 +54,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  root to: 'users#new'
+  root to: 'users#menu'
 
   # sign up page with form:
   get 'users/new' => 'users#new', as: :new_user

@@ -13,17 +13,21 @@
 
 ActiveRecord::Schema.define(version: 20181001143721) do
 
-  create_table "realestates", id: false, force: :cascade do |t|
-    t.integer  "id"
-    t.string   "name"
-    t.string   "website"
-    t.string   "address"
-    t.integer  "size"
-    t.integer  "founded"
-    t.float    "revenue"
-    t.string   "synopsis"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "houses", force: :cascade do |t|
+    t.integer  "realestateid"
+    t.integer  "primary_key"
+    t.string   "location"
+    t.integer  "squarefootage"
+    t.integer  "year"
+    t.string   "style"
+    t.float    "list_price"
+    t.integer  "floors"
+    t.boolean  "basement"
+    t.string   "currentowner"
+    t.string   "contact"
+    t.string   "potentialbuyers"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -32,7 +36,6 @@ ActiveRecord::Schema.define(version: 20181001143721) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.boolean  "status"
     t.string   "user_type"
   end
 
