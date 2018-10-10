@@ -17,7 +17,11 @@ class HouseController < ApplicationController
     end
   end
   def edit
-    @house = House.find(params[:id])
+    @house = House.find_by_id(params[:id])
+    if @house == nil
+      flash[:notice] = "Record not found!"
+      render 'house/show'
+    end
   end
 
   def update
@@ -25,7 +29,7 @@ class HouseController < ApplicationController
     if @house.update_attributes(house_params)
       # Handle a successful update.
       flash[:notice] = "Updated successfully!"
-      redirect_to root_path
+      redirect_to @house
     else
       render 'edit'
     end

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  househunterid: MyString
+  subject: MyString
+  message: MyString
+  reply: MyString
+
+two:
+  househunterid: MyString
+  subject: MyString
+  message: MyString
+  reply: MyString

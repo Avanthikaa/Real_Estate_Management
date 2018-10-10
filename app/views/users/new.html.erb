@@ -24,6 +24,14 @@
     <%= f.radio_button :user_type, 'Realestate Hunter' %> House Hunter<br />
 
   </div>
+  <div>
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </div>
+  <div>
+    <%= f.label :preferred_contact %>
+    <%= f.select :preferred_contact, %w[Text Email] %>
+  </div>
 
   <div>
     <%= f.submit "Sign up!" %>

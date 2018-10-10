@@ -17,6 +17,12 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
       </br>
+      <%= f.label :phone %>
+      <%= f.text_field :phone, class: 'form_control' %>
+      </br>
+      <%= f.label :preferred_contact %>
+      <%= f.select :preferred_contact, %w[Text Email] %>
+      </br>
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
   </div>

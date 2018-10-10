@@ -1,0 +1,20 @@
+<h1>Inquiry Information</h1>
+
+<%= form_for :inquiry do |f| %>
+  <div>
+    <%= f.label :househunterid %>
+    <%= f.text_field :househunterid, autofocus: true %>
+  </div>
+  <div>
+    <%= f.label :subject %>
+    <%= f.text_field :subject %>
+  </div>
+  <div>
+    <%= f.label :message %>
+    <%= f.text_field :message, autofocus: true %>
+  </div>
+  <div>
+    <%= f.submit "Submit Inquiry" %>
+  </div>
+
+<% end %>

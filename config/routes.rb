@@ -88,4 +88,13 @@ Rails.application.routes.draw do
   get '/house/:id/edit' => 'house#edit'
 
   post '/house/:id/edit' => 'house#update'
+
+  get '/realestate/:id/edit' => 'realestate#edit'
+
+  post '/realestate/:id/edit' => 'realestate#update'
+
+  get 'inquiry/new' => 'inquiry#new', as: :new_inquiry
+
+  post 'inquiry/new' => 'inquiry#create'
+
 end

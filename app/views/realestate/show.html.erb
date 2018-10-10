@@ -1,46 +1,49 @@
 
 
 <h2>Real Estate Company and its details</h2>
+<% @realestate = Realestate.all %>
+<% @realestate.each do |realestate| %>
+
 <p>
   <strong>Id:</strong>
-  <%= @realestate.id %>
+  <%= realestate.id %>
 </p>
 
 <p>
   <strong>Name:</strong>
-  <%= @realestate.name %>
+  <%= realestate.name %>
 </p>
 
 <p>
   <strong>Website:</strong>
-  <%= @realestate.website %>
+  <%= realestate.website %>
 </p>
 
 <p>
   <strong>Address:</strong>
-  <%= @realestate.address %>
+  <%= realestate.address %>
 </p>
 
 <p>
   <strong>Size:</strong>
-  <%= @realestate.size %>
+  <%= realestate.size %>
 </p>
 
 <p>
-  <strong>Found:</strong>
-  <%= @realestate.founded %>
+  <strong>Founded:</strong>
+  <%= realestate.founded %>
 </p>
 
 <p>
   <strong>Revenue:</strong>
-  <%= @realestate.revenue %>
+  <%= realestate.revenue %>
 </p>
 
 <p>
   <strong>Synopsis:</strong>
-  <%= @realestate.synopsis %>
+  <%= realestate.synopsis %>
 </p>
+<%end %>
 
-<%render root_path%>
 
 <%= link_to 'Back', root_path, :class => 'button' %>
