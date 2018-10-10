@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181010172253) do
+ActiveRecord::Schema.define(version: 20181011024528) do
 
   create_table "houses", force: :cascade do |t|
     t.integer  "realestateid"
@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 20181010172253) do
     t.string   "user_type"
     t.string   "phone"
     t.string   "preferred_contact"
+    t.string   "company_name"
+    t.string   "house_interested"
   end
 
 end
