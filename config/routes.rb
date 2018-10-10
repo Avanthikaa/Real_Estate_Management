@@ -91,6 +91,8 @@ Rails.application.routes.draw do
 
   get '/user/menu' => 'users#menu'
 
+  get '/user/show' => 'users#show'
+
   get '/realestate/:id/edit' => 'realestate#edit'
 
   post '/realestate/:id/edit' => 'realestate#update'

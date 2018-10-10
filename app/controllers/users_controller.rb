@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :logged_in_user, only: [:edit, :show, :menu]
+
   def new
     @user = User.new
   end
@@ -49,4 +51,18 @@ class UsersController < ApplicationController
     # that can be submitted by a form to the user model #=> require(:user)
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :user_type, :phone, :preferred_contact)
   end
+
+  # Before filters
+  def logged_in?
+    !current_user.nil?
+  end
+
+  # Confirms a logged-in user.
+  def logged_in_user
+    unless logged_in?
+      flash[:notice] = "Please log in."
+      redirect_to login_path
+    end
+  end
+
 end
