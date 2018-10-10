@@ -18,6 +18,19 @@ class InquiryController < ApplicationController
     end
   end
 
+  def destroy
+    @inquiry = Inquiry.find_by_id(params[:id])
+    if @inquiry != nil
+      Inquiry.find(params[:id]).destroy
+      flash[:success] = "User deleted"
+      redirect_to menu_path
+    else
+      flash[:notice] = "Record not found"
+    end
+
+  end
+
+
   private
   def inquiry_params
     # strong parameters - whitelist of allowed fields #=> permit(:name, :email, ...)
