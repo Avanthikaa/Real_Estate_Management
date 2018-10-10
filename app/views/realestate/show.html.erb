@@ -1,46 +1,48 @@
-
-
 <h2>Real Estate Company and its details</h2>
-<p>
-  <strong>Id:</strong>
-  <%= @realestate.id %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @realestate.name %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @realestate.website %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @realestate.address %>
-</p>
-
-<p>
-  <strong>Size:</strong>
-  <%= @realestate.size %>
-</p>
-
-<p>
-  <strong>Found:</strong>
-  <%= @realestate.founded %>
-</p>
-
-<p>
-  <strong>Revenue:</strong>
-  <%= @realestate.revenue %>
-</p>
-
-<p>
-  <strong>Synopsis:</strong>
-  <%= @realestate.synopsis %>
-</p>
+<% @companies = Realestate.all %>
+<table id="companies" role="datatable">
+  <thead>
+  <tr>
+    <th>Company ID</th>
+    <th>Name</th>
+    <th>Website</th>
+    <th>Address</th>
+    <th>Size</th>
+    <th>Found</th>
+    <th>Revenue</th>
+    <th>Synopsis</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @companies.each do |company| %>
+  <tr>
+    <td>
+      <%= company.id %>
+    </td>
+    <td>
+      <%= company.name %>
+    </td>
+    <td>
+      <%= company.website %>
+    </td>
+    <td>
+      <%= company.address %>
+    </td>
+    <td>
+      <%= company.size %>
+    </td>
+    <td>
+      <%= company.founded %>
+    </td>
+    <td>
+      <%= company.revenue %>
+    </td>
+    <td>
+      <%= company.synopsis %>
+    </td>
+  </tr>
+  <% end %>
 
 <%render root_path%>
 
-<%= link_to 'Back', root_path, :class => 'button' %>
+<%= link_to 'Back', user_menu_path, :class => 'button' %>

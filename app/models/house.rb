@@ -1,4 +1,5 @@
 class House < ActiveRecord::Base
+  mount_uploader :image, HouseImagesUploader
   validates :realestateid, :presence =>true
   validates :location, :presence =>true
   validates :squarefootage, :presence =>true

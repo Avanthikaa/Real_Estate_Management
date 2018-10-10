@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -59,3 +59,8 @@ end
 
 #gem "bootstrap_form", ">= 4.0.0.alpha6"
 
+# Adding Carrierwave gem to upload images
+gem 'carrierwave'
+
+#Adding datatables to show structured details
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'

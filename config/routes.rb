@@ -54,7 +54,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  root to: 'users#menu'
+  root to: 'users#new'
 
   # sign up page with form:
   get 'users/new' => 'users#new', as: :new_user
@@ -88,4 +88,6 @@ Rails.application.routes.draw do
   get '/house/:id/edit' => 'house#edit'
 
   post '/house/:id/edit' => 'house#update'
+
+  get '/user/menu' => 'users#menu'
 end

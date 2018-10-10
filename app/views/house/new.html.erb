@@ -1,6 +1,6 @@
 <h1>Create House Information</h1>
 
-<%= form_for :house do |f| %>
+<%= form_for :house, :html => {:multipart => true} do |f| %>
   <div>
     <%= f.label :realestateid %>
     <%= f.text_field :realestateid %>
@@ -44,6 +44,10 @@
   <div>
     <%= f.label :potentialbuyers %>
     <%= f.text_field :potentialbuyers %>
+  </div>
+
+  <div>
+    <%= f.file_field :image%>
   </div>
   <div>
     <%= f.submit "Submit" %>

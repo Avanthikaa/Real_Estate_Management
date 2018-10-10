@@ -7,4 +7,6 @@ class Realestate < ActiveRecord::Base
   validates :founded, :presence => true
   validates :revenue, :presence => true
   validates :synopsis, :presence => true
+
+  has_many :users
 end
