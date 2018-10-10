@@ -1,5 +1,4 @@
 class Realestate < ActiveRecord::Base
-  validates :id, :presence => true
   validates :name, :presence => true
   validates :website, :presence => true
   validates :address, :presence => true

@@ -31,6 +31,25 @@ ActiveRecord::Schema.define(version: 20181010172253) do
     t.string   "image"
   end
 
+  create_table "inquiries", force: :cascade do |t|
+    t.string   "househunterid"
+    t.string   "subject"
+    t.string   "message"
+    t.string   "reply"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "realestates", force: :cascade do |t|
+    t.string  "name"
+    t.string  "website"
+    t.string  "address"
+    t.integer "size"
+    t.integer "founded"
+    t.float   "revenue"
+    t.string  "synopsis"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -38,6 +57,8 @@ ActiveRecord::Schema.define(version: 20181010172253) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "user_type"
+    t.string   "phone"
+    t.string   "preferred_contact"
   end
 
 end
