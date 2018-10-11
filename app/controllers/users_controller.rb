@@ -29,6 +29,21 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
+
+  def destroy
+    @user = User.find_by_id(params[:id])
+    if @user != nil
+      User.find(params[:id]).destroy
+      flash[:success] = "User deleted"
+      redirect_to menu_path
+    else
+      flash[:notice] = "Record not found"
+    end
+
+  end
+
+
+
   private
 
   def user_params

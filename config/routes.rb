@@ -100,4 +100,8 @@ Rails.application.routes.draw do
   get 'inquiry/new' => 'inquiry#new', as: :new_inquiry
 
   post 'inquiry/new' => 'inquiry#create'
+
+  get '/users/:id/destroy' => 'users#destroy'
+
+  get '/inquiry/:id/destroy' => 'inquiry#destroy'
 end

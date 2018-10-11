@@ -7,7 +7,7 @@ class RealestateController < ApplicationController
   def create
     @realestate = Realestate.new(realestate_params)
 
-    if @realestate.save!
+    if @realestate.save
       # If user saves in the db successfully:
       flash[:notice] = "Real Estate Company created successfully!"
       redirect_to root_path
