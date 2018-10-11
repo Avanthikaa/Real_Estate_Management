@@ -1,4 +1,8 @@
+<% if current_user == nil %>
 <h1>Sign Up</h1>
+<%else %>
+  <h1>Create new House Hunter/Realtor</h1>
+<%end %>
 
 <%= form_for @user do |f| %>
   <div>
