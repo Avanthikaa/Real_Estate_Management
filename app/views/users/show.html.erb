@@ -1,0 +1,41 @@
+<h2>User Details</h2>
+<% @users = User.all %>
+<table id="users" role="datatable">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>User Type</th>
+    <th>Phone</th>
+    <th>Preferred Contact</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td>
+        <%= user.name %>
+      </td>
+
+      <td>
+        <%= user.email %>
+      </td>
+
+      <td>
+        <%= user.user_type %>
+      </td>
+
+      <td>
+        <%= user.phone %>
+      </td>
+
+      <td>
+        <%= user.preferred_contact %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to 'Back', user_menu_path, :class => 'button' %>

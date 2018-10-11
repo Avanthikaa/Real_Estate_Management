@@ -23,3 +23,7 @@ $(document).ready( function () {
 $(document).ready( function () {
     $('#companies').DataTable();
 } );
+
+$(document).ready( function () {
+    $('#users').DataTable();
+} );

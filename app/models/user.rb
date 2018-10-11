@@ -6,6 +6,4 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
 
   belongs_to :realestate
-
-  User.create({:name => "Admin", :email => "admin@admin.com", :password => "admin", :password_confirmation =>"admin", :user_type => "Admin"})
 end
