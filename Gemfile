@@ -76,3 +76,6 @@ gem 'carrierwave'
 
 #Adding datatables to show structured details
 gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
+
+#Validate Url
+gem 'validate_url'
