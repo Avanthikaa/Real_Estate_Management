@@ -101,6 +101,16 @@ Rails.application.routes.draw do
 
   post 'inquiry/new' => 'inquiry#create'
 
+  get 'inquiry/show' => 'inquiry#show'
+
+  get 'inquiry/:id/edit' => 'inquiry#edit'
+
+  post 'inquiry/:id/edit' => 'inquiry#update', as: :inquiry_edit
+
+  get 'inquiry/:id/reply' => 'inquiry#reply', as: :inquiry_reply
+
+  post 'inquiry/:id/reply' => 'inquiry#reply_update'
+
   get '/users/:id/destroy' => 'users#destroy', as: :users_destroy
 
   get '/inquiry/:id/destroy' => 'inquiry#destroy', as: :inquiry_destroy

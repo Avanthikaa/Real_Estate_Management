@@ -57,11 +57,11 @@
       <td>
         <%= house.contact %>
       </td>
-
+      <% if current_user.user_type != "Realestate Hunter" %>
       <td>
         <%= house.potentialbuyers %>
       </td>
-
+      <%end %>
       <td>
         <%= image_tag house.image_url.to_s%>
       </td>

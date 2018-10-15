@@ -8,8 +8,8 @@ class HouseController < ApplicationController
 
     if @house.save
       # If user saves in the db successfully:
-      flash[:notice] = "Account created successfully!"
-      redirect_to root_path
+      flash[:notice] = "House created successfully!"
+      redirect_to user_menu_path
     else
       # If user fails model validation - probably a bad password or duplicate email:
       flash.now.alert = "Oops, couldn't create account. Please make sure you are using a valid email and password and try again."

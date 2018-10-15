@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.10'
 # Use sqlite3 as the database for Active Record
 
+#gem 'rspec-rails', '~> 3.5'
+
 #gem 'pg', '~> 0.20'
 
 group :production do
@@ -13,7 +15,17 @@ end
 
 group :development, :test do
   gem 'sqlite3'
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Adds support for Capybara system testing and selenium driver
+  gem 'capybara', '~> 2.13'
+  gem 'selenium-webdriver'
+  gem 'ffaker'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'rspec-rails', '>= 2.0.0.beta'
+
 end
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

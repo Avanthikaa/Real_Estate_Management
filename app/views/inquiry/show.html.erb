@@ -1,0 +1,87 @@
+<h2>Inquiry Details</h2>
+<% @inquiry = Inquiry.all %>
+<table id="inquiry" role="datatable">
+  <thead>
+  <tr>
+    <th>Subject</th>
+    <th>Message</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    <th>Reply</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @inquiry.each do |inquiry| %>
+  <% if current_user.user_type == "Realestate Hunter" %>
+    <% if current_user.id === inquiry.househunterid.to_i %>
+      <tr>
+        <td>
+          <%= inquiry.subject %>
+        </td>
+
+        <td>
+          <%= inquiry.message %>
+        </td>
+        <td>
+          <%= inquiry.reply %>
+        </td>
+        <td>
+          <%= link_to "Edit", inquiry_edit_path(inquiry.id) %>
+        </td>
+        <td>
+          <%= link_to "Delete", inquiry_destroy_path(inquiry.id) %>
+        </td>
+      </tr>
+    <% end %>
+  <% elsif current_user.user_type == "Realtor" %>
+      <tr>
+        <td>
+          <%= inquiry.id %>
+        </td>
+
+        <td>
+          <%= inquiry.subject %>
+        </td>
+
+        <td>
+          <%= inquiry.message %>
+        </td>
+        <td>
+
+        </td>
+        <td>
+
+        </td>
+        <td>
+          <%= link_to "Reply", inquiry_reply_path(inquiry.id) %>
+        </td>
+      </tr>
+      <% else %>
+      <tr>
+        <td>
+          <%= inquiry.subject %>
+        </td>
+
+        <td>
+          <%= inquiry.message %>
+        </td>
+        <td>
+          <%= inquiry.reply %>
+        </td>
+        <td>
+          <%= link_to "Edit", inquiry_edit_path(inquiry.id) %>
+        </td>
+        <td>
+          <%= link_to "Delete", inquiry_destroy_path(inquiry.id) %>
+        </td>
+        <td>
+          <%= link_to "Reply", inquiry_reply_path(inquiry.id) %>
+        </td>
+      </tr>
+    <%end %>
+  <%end %>
+  </tbody>
+</table>
+
+
+<%= link_to 'Back', user_menu_path, :class => 'button' %>

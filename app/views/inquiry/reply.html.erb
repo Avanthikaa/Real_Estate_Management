@@ -1,0 +1,20 @@
+<h1>Reply to Inquiry</h1>
+
+  <%= form_for :inquiry do |f| %>
+  <div>
+    Subject :
+    <%= @inquiry.subject %>
+  </div>
+  <div>
+    Message :
+    <%= @inquiry.message %>
+  </div>
+  <div>
+    <%= f.label :reply %>
+    <%= f.text_area :reply %>
+  </div>
+  <div>
+    <%= f.submit "Submit Inquiry" %>
+  </div>
+
+<% end %>
