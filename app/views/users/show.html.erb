@@ -8,10 +8,13 @@
     <th>User Type</th>
     <th>Phone</th>
     <th>Preferred Contact</th>
+    <th>Edit</th>
+    <th>Destroy</th>
   </tr>
   </thead>
   <tbody>
   <% @users.each do |user| %>
+  <% if user.user_type!= "Admin" %>
     <tr>
       <td>
         <%= user.name %>
@@ -32,7 +35,14 @@
       <td>
         <%= user.preferred_contact %>
       </td>
+      <td>
+        <%= link_to "Edit", user_edit_path(user.id) %>
+      </td>
+      <td>
+        <%= link_to "Delete", users_destroy_path(user.id) %>
+      </td>
     </tr>
+  <%end %>
   <% end %>
   </tbody>
 </table>

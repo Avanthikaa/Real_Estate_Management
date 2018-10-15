@@ -30,12 +30,23 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      # Handle a successful update.
+      flash[:notice] = "Updated successfully!"
+      redirect_to user_menu_path
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     @user = User.find_by_id(params[:id])
     if @user != nil
       User.find(params[:id]).destroy
-      flash[:success] = "User deleted"
-      redirect_to menu_path
+      flash[:notice] = "User deleted"
+      redirect_to user_show_path
     else
       flash[:notice] = "Record not found"
     end

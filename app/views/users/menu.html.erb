@@ -11,11 +11,10 @@
 <% if current_user.user_type === 'Admin' %>
   <h4><%= link_to "Users", user_show_path%></h4>
 <% end %>
-<% if current_user.user_type === 'House Hunter' %>
-  <h4><%= link_to "Post Inquiries", house_path %></h4>
+<% if current_user.user_type === 'Realestate Hunter' %>
+  <h4><%= link_to "Post Inquiries", new_inquiry_path %></h4>
 <% end %>
 <% if current_user.user_type === 'Admin' || current_user.user_type === 'Realtor' %>
   <h4><%= link_to "View Inquiries", house_path %></h4>
 <% end %>
-
 </body>

@@ -41,6 +41,21 @@ class RealestateController < ApplicationController
     end
   end
 
+  def destroy
+    @realestate = Realestate.find_by_id(params[:id])
+    if @realestate != nil
+      Realestate.find(params[:id]).destroy
+      flash[:notice] = "Company deleted"
+      redirect_to realestate_show_path
+    else
+      flash[:notice] = "Record not found"
+    end
+
+  end
+
+
+
+
   private
   def realestate_params
     # strong parameters - whitelist of allowed fields #=> permit(:name, :email, ...)

@@ -83,9 +83,9 @@ Rails.application.routes.draw do
 
   get '/realestate/show' => 'realestate#show'
 
-  get '/user/:id/edit' => 'users#edit'
+  get '/user/:id/edit' => 'users#edit', as: :user_edit
 
-  get '/house/:id/edit' => 'house#edit'
+  get '/house/:id/edit' => 'house#edit', as: :house_edit
 
   post '/house/:id/edit' => 'house#update'
 
@@ -93,7 +93,7 @@ Rails.application.routes.draw do
 
   get '/user/show' => 'users#show'
 
-  get '/realestate/:id/edit' => 'realestate#edit'
+  get '/realestate/:id/edit' => 'realestate#edit', as: :realestate_edit
 
   post '/realestate/:id/edit' => 'realestate#update'
 
@@ -101,7 +101,11 @@ Rails.application.routes.draw do
 
   post 'inquiry/new' => 'inquiry#create'
 
-  get '/users/:id/destroy' => 'users#destroy'
+  get '/users/:id/destroy' => 'users#destroy', as: :users_destroy
 
-  get '/inquiry/:id/destroy' => 'inquiry#destroy'
+  get '/inquiry/:id/destroy' => 'inquiry#destroy', as: :inquiry_destroy
+
+  get '/house/:id/destroy' => 'house#destroy', as: :house_destroy
+
+  get '/realestate/:id/destroy' => 'realestate#destroy', as: :realestate_destroy
 end

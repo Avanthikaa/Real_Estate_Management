@@ -3,7 +3,6 @@
 <table id="companies" role="datatable">
   <thead>
   <tr>
-    <th>Company ID</th>
     <th>Name</th>
     <th>Website</th>
     <th>Address</th>
@@ -11,14 +10,13 @@
     <th>Found</th>
     <th>Revenue</th>
     <th>Synopsis</th>
+    <th>Edit</th>
+    <th>Destroy</th>
   </tr>
   </thead>
   <tbody>
   <% @companies.each do |company| %>
   <tr>
-    <td>
-      <%= company.id %>
-    </td>
     <td>
       <%= company.name %>
     </td>
@@ -39,6 +37,12 @@
     </td>
     <td>
       <%= company.synopsis %>
+    </td>
+    <td>
+      <%= link_to "Edit", realestate_edit_path(company.id) %>
+    </td>
+    <td>
+      <%= link_to "Delete",realestate_destroy_path(company.id) %>
     </td>
   </tr>
   <% end %>

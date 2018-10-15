@@ -9,7 +9,7 @@ class InquiryController < ApplicationController
     if @inquiry.save
       # If user saves in the db successfully:
       flash[:notice] = "Inquiry created successfully!"
-      redirect_to root_path
+      redirect_to user_menu_path
 
     else
       # If user fails model validation - probably a bad password or duplicate email:

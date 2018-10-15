@@ -3,7 +3,6 @@
 <table id="houses" role="datatable">
   <thead>
     <tr>
-      <th>House ID</th>
       <th>Location</th>
       <th>Square Footage</th>
       <th>Year</th>
@@ -15,14 +14,13 @@
       <th>Contact</th>
       <th>Potential Buyers</th>
       <th>Image</th>
+      <th>Edit</th>
+      <th>Destroy</th>
     </tr>
   </thead>
   <tbody>
   <% @house.each do |house| %>
     <tr>
-      <td>
-        <%= house.id %>
-      </td>
 
       <td>
         <%= house.location %>
@@ -67,10 +65,16 @@
       <td>
         <%= image_tag house.image_url.to_s%>
       </td>
+      <td>
+        <%= link_to "Edit", house_edit_path(house.id) %>
+      </td>
+      <td>
+        <%= link_to "Delete",house_destroy_path(house.id) %>
+      </td>
     </tr>
   <% end %>
   </tbody>
 </table>
 
 
-<%= link_to 'Back', root_path, :class => 'button' %>
+<%= link_to 'Back', user_menu_path, :class => 'button' %>
