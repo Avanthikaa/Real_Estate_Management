@@ -1,4 +1,5 @@
 class House < ActiveRecord::Base
+  mount_uploader :image, HouseImagesUploader
   validates :realestateid, :presence => { :message => "Realestate ID has to be a valid number"}, numericality: { only_integer: true }
   validates :location, :presence =>{ :message => "Location is necessary"}
   validates :squarefootage, :presence => {:message => "Square footage shpuld be present and needs to be an integer"}, numericality: true
