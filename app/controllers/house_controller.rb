@@ -66,7 +66,7 @@ class HouseController < ApplicationController
   def destroy
     @house = House.find_by_id(params[:id])
     if @house != nil
-      User.find(params[:id]).destroy
+      House.find(params[:id]).destroy
       flash[:notice] = "House deleted"
       redirect_to house_show_path
     else
