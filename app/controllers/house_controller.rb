@@ -5,7 +5,7 @@ class HouseController < ApplicationController
 
   def create
     @house = House.new(house_params)
-
+    @house.creatorid = current_user.id
     if @house.save
       # If user saves in the db successfully:
       flash[:notice] = "House created successfully!"

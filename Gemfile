@@ -15,6 +15,14 @@ end
 
 group :development, :test do
   gem 'sqlite3'
+
+  #gem 'rspec-core', '2.14.7'
+  #gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers'
+    #require: 'rspec/rails'
+#, '>= 2.0.0.beta'
+end
+
+group :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
@@ -22,10 +30,10 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'ffaker'
   gem 'factory_girl_rails', '~> 4.0'
-  gem 'rspec-rails', '>= 2.0.0.beta'
-
+  #gem 'rspec'
+  gem 'rspec-rails',  '>= 2.0.0.beta'
+  gem 'shoulda-matchers', '~> 3.1'
 end
-
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

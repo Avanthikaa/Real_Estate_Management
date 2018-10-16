@@ -63,18 +63,32 @@
       </td>
       <%end %>
       <td>
-        <%= image_tag house.image_url.to_s%>
+        <%= image_tag house.image.to_s%>
       </td>
+      <% if current_user.user_type == 'Realtor' %>
+      <% if current_user.id == house.creatorid %>
       <td>
         <%= link_to "Edit", house_edit_path(house.id) %>
       </td>
       <td>
         <%= link_to "Delete",house_destroy_path(house.id) %>
       </td>
+      <%end %>
+        <%elsif current_user.user_type == 'Admin' %>
+        <td>
+          <%= link_to "Edit", house_edit_path(house.id) %>
+        </td>
+        <td>
+          <%= link_to "Delete",house_destroy_path(house.id) %>
+        </td>
     </tr>
+        <%end %>
   <% end %>
   </tbody>
 </table>
+<% if current_user.user_type != 'Realestate Hunter' %>
+<%= link_to "Create house", house_path %>
+  <%end %>
 
 
 <%= link_to 'Back', user_menu_path, :class => 'button' %>

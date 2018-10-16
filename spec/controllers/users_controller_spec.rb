@@ -2,11 +2,11 @@ require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
   before(:each) do
-    @car = User.create(:name =>'asd' , :phone =>'1234567895', :email=>'acb@gmail.com')
+    @car = User.create(:name =>'asd' , :phone =>'1234567895', :email=>'acb@gmail.com', :password => 'abcd', :password_confirmation => 'abcd')
   end
 
   it 'creates user successfully' do
-  post :create, params: { user: {:name => 'car1', :phone =>'1234567895', :email=>'acb@gmail.com'}}
+  post :create, params: { user: {:name => 'car1', :phone =>'1234567895', :email=>'acb@gmail.com',:password => 'abcd', :password_confirmation => 'abcd'}}
   user_create1 = assigns(:user)
   expect(response).to render_template('new')
   expect(user_create1.errors.any?).to be true
