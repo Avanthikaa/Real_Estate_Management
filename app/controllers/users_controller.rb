@@ -19,8 +19,11 @@ class UsersController < ApplicationController
     if @user.save
       # If user saves in the db successfully:
       flash[:notice] = "Account created successfully!"
-      if current_user.user_type == 'Admin'
-        redirect_to user_menu_path
+
+      if current_user != nil
+        if current_user.user_type == 'Admin'
+          redirect_to user_menu_path
+        end
       else
         redirect_to login_path
       end
@@ -72,7 +75,7 @@ class UsersController < ApplicationController
   def user_params
     # strong parameters - whitelist of allowed fields #=> permit(:name, :email, ...)
     # that can be submitted by a form to the user model #=> require(:user)
-    params.permit(:name, :email, :password, :password_confirmation, :user_type, :phone, :preferred_contact, :company_name, :house_interested)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :user_type, :phone, :preferred_contact, :company_name, :house_interested)
   end
 
   # Before filters
