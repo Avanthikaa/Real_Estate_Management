@@ -111,7 +111,7 @@ Rails.application.routes.draw do
 
   post 'inquiry/:id/edit' => 'inquiry#update', as: :inquiry_edit
 
-  get 'inquiry/:id/reply' => 'inquiry#reply', as: : :inquiry_reply
+  get 'inquiry/:id/reply' => 'inquiry#reply', as: :inquiry_reply
 
   post 'inquiry/:id/reply' => 'inquiry#reply_update'
 
