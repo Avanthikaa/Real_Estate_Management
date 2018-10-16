@@ -31,35 +31,35 @@ class HouseController < ApplicationController
     if @house.update_attributes(house_params)
       # Handle a successful update.
       flash[:notice] = "Updated successfully!"
-      redirect_to @house
+      redirect_to house_show_path
     else
       render 'edit'
     end
   end
 
-  def interest
-    @house = House.find(params[:id])
-    @users = User.find(current_user.id)
-    if @house.potentialbuyers == nil
-      @house.potentialbuyers = @current_user.name
-    else
-      @house.potentialbuyers += " "+@current_user.name
-    end
+ def interest
+#    @house = House.find(params[:id])
+#    @users = User.find(current_user.id)
+#    if @house.potentialbuyers == nil
+#      @house.potentialbuyers = @current_user.name
+#    else
+#      @house.potentialbuyers += " "+@current_user.name
+#    end
 
-    if @users.house_interested == nil
-      @users.house_interested = @house.id
-    else
-      @users.house_interested += " "+@house.id
-      @user.update_attributes(:house_interested, @users.house_interested)
-    end
-    if @house.update_attributes(house_params)
+#    if @users.house_interested == nil
+#      @users.house_interested = @house.id
+#    else
+#      @users.house_interested += " "+@house.id
+#      @user.update_attributes(:house_interested, @users.house_interested)
+#    end
+#    if @house.update_attributes(house_params)
       # Handle a successful update.
-      flash[:notice] = "Updated successfully!"
+#      flash[:notice] = "Updated successfully!"
+#      redirect_to house_show_path
+#    else
+#   flash[:notice] = "Couldn't update!"
       redirect_to house_show_path
-    else
-      flash[:notice] = "Couldn't update!"
-      redirect_to house_show_path
-    end
+#    end
   end
 
 
