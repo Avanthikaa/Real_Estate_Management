@@ -85,6 +85,8 @@ Rails.application.routes.draw do
 
   get '/user/:id/edit' => 'users#edit', as: :user_edit
 
+  post '/user/:id/edit' => 'users#update'
+
   get '/house/:id/edit' => 'house#edit', as: :house_edit
 
   post '/house/:id/edit' => 'house#update'

@@ -23,6 +23,12 @@
       <%= f.label :preferred_contact %>
       <%= f.select :preferred_contact, %w[Text Email] %>
       </br>
+      <% if current_user.user_type === 'Realtor' %>
+        <%= f.label "Choose Company" %>
+        <%= f.collection_select :company_name, Realestate.order(:name), :id, :name, include_blank: true %>
+        <%= link_to "Create New Company", realestate_path %>
+        </br>
+      <% end %>
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
   </div>
