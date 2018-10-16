@@ -63,6 +63,10 @@ class HouseController < ApplicationController
   end
 
 
+  def show
+    @house = House.all
+  end
+
   def destroy
     @house = House.find_by_id(params[:id])
     if @house != nil
