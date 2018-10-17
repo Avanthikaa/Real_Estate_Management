@@ -8,13 +8,16 @@ User Credentials:
 
 The following credentials are used to login into the application.
 
-Usertype	  Email	            Password
+Usertype :	  admin
 
-admin	  admin@admin.com        admin
+Email	 :    admin@admin.com          
+
+Password :	  admin
 
 The following features has been implemented.
 
 Features:
+
 1.	As an admin, you will be able to create the realtor and house hunter accounts. 
 
 2.	The house hunter can see the list of houses, will be able to submit inquiries.
