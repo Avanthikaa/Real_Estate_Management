@@ -14,7 +14,8 @@ class InquiryController < ApplicationController
 
     else
       # If user fails model validation - probably a bad password or duplicate email:
-      flash.now.alert = "Oops, couldn't create Inquiry. Please make sure you are entering all the information and try again."
+      flash.now.alert = "Couldn't create inquiry"
+      flash.now.alert = @inquiry.errors.full_messages
       render :new
     end
   end

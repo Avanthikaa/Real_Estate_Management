@@ -19,10 +19,17 @@ class UsersController < ApplicationController
     if @user.save
       # If user saves in the db successfully:
       flash[:notice] = "Account created successfully!"
-      redirect_to login_path
+      if current_user.user_type == 'Admin'
+        redirect_to user_menu_path
+      else
+        redirect_to login_path
+      end
+
+
     else
       # If user fails model validation - probably a bad password or duplicate email:
-      flash.now.alert = "Oops, couldn't create account. Please make sure you are using a valid email and password and try again."
+      flash.now.alert = "Oops, couldn't create account"
+      flash.now.alert = @user.errors.full_messages
       render :new
     end
   end

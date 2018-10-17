@@ -7,13 +7,14 @@ class RealestateController < ApplicationController
   def create
     @realestate = Realestate.new(realestate_params)
 
-    if @realestate.save!
+    if @realestate.save
       # If user saves in the db successfully:
       flash[:notice] = "Real Estate Company created successfully!"
       redirect_to user_menu_path
     else
       # If user fails model validation - probably a bad password or duplicate email:
       flash.now.alert = "Oops, couldn't create company."
+      flash.now.alert = @realestate.errors.full_messages
       render :new
     end
   end
