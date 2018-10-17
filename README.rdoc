@@ -1,28 +1,32 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a course project made by Avanthikaa Ravichandran, Piyush Mishra and Reddy Aravind.
 
-Things you may want to cover:
+The project has been deployed in Heroku. The link for the deployed application is http://realestatemanagementteam56.herokuapp.com/
 
-* Ruby version
+User Credentials:
 
-* System dependencies
+The following credentials are used to login into the application.
 
-* Configuration
+Usertype	  Email	            Password
 
-* Database creation
+admin	  admin@admin.com        admin
 
-* Database initialization
+The following features has been implemented.
 
-* How to run the test suite
+Features:
+1.	As an admin, you will be able to create the realtor and house hunter accounts. 
 
-* Services (job queues, cache servers, search engines, etc.)
+2.	The house hunter can see the list of houses, will be able to submit inquiries.
 
-* Deployment instructions
+3.	Real estate agency can be created by realtor and many houses under each real estate company.
 
-* ...
+4.	The images can be added to the houses by the realtor.
 
+5.  The realtor can choose company from the edit profile link. The house hunter can have an list of houses that he is interested in.
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+6.  The admin will be able to see the details of the real estate company. He can create house hunter and realter profiles.
+
+7.  The admin can edit or delete the user at any point of time.
+
+8.  The admin can edit and delete the inquiries and realtor can reply to the inquiries in his company. The house hunter can edit or delete the inquiry that he submitted
