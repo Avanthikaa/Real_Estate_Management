@@ -35,6 +35,31 @@ class HouseController < ApplicationController
     end
   end
 
+  def interest
+    @house = House.find(params[:id])
+    @users = User.find(current_user.id)
+    if @house.potentialbuyers == nil
+      @house.potentialbuyers = @current_user.name
+    else
+      @house.potentialbuyers += " "+@current_user.name
+    end
+
+    if @users.house_interested == nil
+      @users.house_interested = @house.id
+    else
+      @users.house_interested += " "+@house.id
+      @user.update_attributes(:house_interested, @users.house_interested)
+    end
+    if @house.update_attributes(house_params)
+      # Handle a successful update.
+      flash[:notice] = "Updated successfully!"
+      redirect_to house_show_path
+    else
+      flash[:notice] = "Couldn't update!"
+      redirect_to house_show_path
+    end
+  end
+
 
   def destroy
     @house = House.find_by_id(params[:id])
@@ -53,6 +78,6 @@ class HouseController < ApplicationController
   def house_params
     # strong parameters - whitelist of allowed fields #=> permit(:name, :email, ...)
     # that can be submitted by a form to the user model #=> require(:user)
-    params.require(:house).permit(:realestateid, :location, :squarefootage, :year, :style, :list_price, :floors, :basement, :currentowner, :contact, :potentialbuyers, :image)
+    params.permit(:realestateid, :location, :squarefootage, :year, :style, :list_price, :floors, :basement, :currentowner, :contact, :potentialbuyers, :image)
   end
 end

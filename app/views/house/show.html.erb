@@ -63,8 +63,13 @@
       </td>
       <%end %>
       <td>
-        <%= image_tag house.image.to_s%>
+        <%= image_tag house.image_url.to_s%>
       </td>
+      <% if current_user.user_type == "Realestate Hunter" %>
+        <td>
+          <%= link_to "Interested", house_interested_path(house.id) %>
+        </td>
+      <% end %>
       <% if current_user.user_type == 'Realtor' %>
       <% if current_user.id == house.creatorid %>
       <td>

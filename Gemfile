@@ -66,7 +66,7 @@ gem 'rb-readline'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  # gem 'byebug'
 end
 
 group :development do
@@ -87,3 +87,7 @@ gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-ra
 
 #Validate Url
 gem 'validate_url'
+
+gem 'debase'
+
+gem 'ruby-debug-ide'

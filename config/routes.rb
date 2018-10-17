@@ -81,6 +81,8 @@ Rails.application.routes.draw do
 
   get '/house/show' => 'house#show'
 
+  get '/house/:id/interested' => 'house#interest', as: :house_interested
+
   get '/realestate/show' => 'realestate#show'
 
   get '/user/:id/edit' => 'users#edit', as: :user_edit
